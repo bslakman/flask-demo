@@ -12,7 +12,7 @@ from bokeh.io import output_notebook
 from bokeh.models import HoverTool
 
 
-# In[141]:
+# In[144]:
 
 def plot(ticker, list_of_metrics=['close']):
     with open('api.txt', 'r') as f: 
@@ -32,5 +32,5 @@ def plot(ticker, list_of_metrics=['close']):
     hover = HoverTool(tooltips=[('Date', '$x')])
     p = TimeSeries(data = df, x = 'date', y = list_of_metrics, tools=[hover], 
                plot_width = 600, plot_height=400, title=ticker)
-    show(p)
+    return p
 

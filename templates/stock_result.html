@@ -1,16 +1,14 @@
 <!doctype html>
 <title>Results</title>
-<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
-<div class=page>
-  <h1>Stock Price for the last 30 days</h1>
-  <div class=metanav>
-    <h4>
-     <img src="/fig/" alt="Image"> 
-    </h4>
-  <form action="/result">
-     <p>
-    <input type='reset' value='Reset' />
-      </p>
-  </form>
-  </div>
-</div>
+<head>
+<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.css" type="text/css" />
+<script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
+{{ script | safe }}
+</head>
+<body>
+    <div class=page>
+      <h1>Closing stock price for the last 30 days</h1>
+      {{ div | safe }}
+    </div>
+  </body>
+</html>
