@@ -1,0 +1,32 @@
+<!doctype html>
+<title>Milestone Project</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
+<div class=page>
+  <h1>User Input</h1>
+  <div class=metanav>
+
+    <h4>
+    Please enter a stock ticker, e.g. SBUX, and check desired features:
+    </h4>
+
+    <form id='userinfoform' method='post' action='/' >
+      <p>
+    Ticker symbol: <input type='text' name='ticker_symbol' />
+      </p>
+      <p>
+    Opening price: <input type='checkbox' name='open' />
+      </p>
+      <p>
+    High price: <input type='checkbox' name='high' />
+      </p>
+      <p>
+    Closing price: <input type='checkbox' name='close' />
+      </p>
+      <p>
+    <input type='submit' value='Submit' />
+      </p>
+    </form>
+
+  </div>
+</div>
+</html>
