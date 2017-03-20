@@ -17,12 +17,13 @@ def index():
         return render_template('stock_info.html')
     else:
         app.vars['ticker'] = request.form['ticker_symbol']
+        app.vars['list_of_metrics'] = request.form.getlist('metrics')
         return redirect('/result')
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
     if request.method == 'GET':
-        graph = plot(app.vars['ticker'])
+        graph = plot(app.vars['ticker'], app.vars['list_of_metrics'])
         script, div = components(graph)
         return render_template('stock_result.html', script=script, div=div)
     else:
