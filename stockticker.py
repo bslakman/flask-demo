@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[135]:
-
 import requests
 import pandas as pd
 import datetime
@@ -10,9 +8,6 @@ import datetime
 from bokeh.charts import TimeSeries, show
 from bokeh.io import output_notebook
 from bokeh.models import HoverTool
-
-
-# In[144]:
 
 def plot(ticker, list_of_metrics=['close']):
     with open('api.txt', 'r') as f: 
